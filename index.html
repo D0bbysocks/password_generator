@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <script type="module" src="./script.js" defer></script>
+  <title>Frontend Mentor | Password generator app</title>
+</head>
+<body>
+  <main class="app" id="password-generator">
+    <section class="card">
+      <header class="card-header">
+        <h1 class="preset-4">Password Generator</h1>
+      </header>
+
+      <div class="card-body">
+        <div class="card-section-content">
+
+          <!-- Generated password output -->
+          <div class="password-output">
+            <input
+              type="text"
+              id="password"
+              class="password-field preset-2"
+              placeholder="P4$5W0rD!"
+              readonly
+              aria-label="Generated password"
+            >
+            <div class="copy">
+              <span class="preset-3 hidden" id="copy-text">COPIED</span>
+              <button class="copy-btn" aria-label="Copy password to clipboard"></button>
+              </div>
+            </div>
+
+          <!-- Controls -->
+          <form class="form" action="#" method="post">
+            <!-- Character length -->
+            <div class="character-length-group">
+              <div class="character-length-header">
+                <label for="length" class="form-label preset-4">Character Length</label>
+                <span class="character-length-value preset-2" id="length-value">0</span>
+              </div>
+              <div class="character-length-slider">
+                <input
+                  type="range"
+                  id="length"
+                  name="length"
+                  min="4"
+                  max="30"
+                  step="1"
+                  value="10"
+                >
+              </div>
+            </div>
+
+            <!-- Checkboxes -->
+            <fieldset class="checkbox-group preset-4">
+              
+              <div class="checkbox-field">
+                <input
+                  type="checkbox"
+                  id="include-uppercase"
+                  name="include-uppercase"
+                  data-option="uppercase"
+                  value="1"
+                >
+                <label for="include-uppercase">Include Uppercase Letters</label>
+              </div>
+
+              <div class="checkbox-field">
+                <input
+                  type="checkbox"
+                  id="include-lowercase"
+                  name="include-lowercase"
+                  data-option="lowercase"
+                  value="1"
+                  checked
+                >
+                <label for="include-lowercase">Include Lowercase Letters</label>
+              </div>
+
+              <div class="checkbox-field">
+                <input
+                  type="checkbox"
+                  id="include-numbers"
+                  name="include-numbers"
+                  data-option="numbers"
+                  value="1"
+                >
+                <label for="include-numbers">Include Numbers</label>
+              </div>
+
+              <div class="checkbox-field">
+                <input
+                  type="checkbox"
+                  id="include-symbols"
+                  name="include-symbols"
+                  data-option="symbols"
+                  value="1"
+                >
+                <label for="include-symbols">Include Symbols</label>
+              </div>
+            </fieldset>
+
+            <!-- Strength Test -->
+             <div class="strength">
+              <p class="strength-label preset-4">STRENGTH</p>
+              <div class="strength_result strength--weak">
+                <span class="preset-3" id="strength_text"></span>
+                <div class="strength_symbols">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+             </div>
+             <button type="button" class="generate preset-4"><div class="btn_flex"><span>GENERATE</span><span class="btn_icon"></span></div></button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
